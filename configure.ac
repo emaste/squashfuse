@@ -65,7 +65,7 @@ AM_CONDITIONAL([SQ_WANT_DEMO], [test "x$enable_demo" = xyes])
 # The 'make check' tests are only known to work on linux.
 AC_CHECK_PROGS([sq_fusermount],[fusermount3 fusermount],[no])
 AC_CHECK_PROG([sq_mksquashfs],[mksquashfs],[yes],[no])
-AC_CHECK_PROGS([sq_md5sum],[md5sum gmd5sum],[no])
+AC_CHECK_PROGS([sq_md5sum],[md5sum gmd5sum md5],[no])
 
 AS_CASE(["${build_os}__$enable_low_level$sq_fusermount$sq_mksquashfs$sq_md5sum"],
 				[linux*__yesfusermount*yes*md5sum],[sq_fuse_tests=yes],
